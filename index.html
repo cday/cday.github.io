@@ -16,17 +16,140 @@
     <link href="cover.css" rel="stylesheet">
 </head>
 <body id="page-top">
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-            <div class="cover-container">
-                <div class="inner cover">
-                    <h1 class="cover-heading"><img src="profile.png" alt="Chris Day" width="256px"></h1>
-                    <h2><b>Chris Day</b></h2>
-                    <h3>co-founder of <a href="http://fabler.fm" class="">fabler.fm</a></h3>
-                    <p class="lead"><a href="mailto:cday@fabler.fm" class="">cday@fabler.fm</a> · <a href="https://github.com/cday" class="">github</a> · <a href="https://www.linkedin.com/in/cdayyyyy" class="">linkedin</a></p>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="#experience">Experience</a></li>
+            <li role="presentation"><a href="#education">Education</a></li>
+            <li role="presentation"><a href="#skills">Skills</a></li>
+            <li role="presentation"><a href="https://github.com/cday">Github</a></li>
+            <li role="presentation"><a href="https://www.linkedin.com/in/cdayyyyy">Linkedin</a></li>
+            <li role="presentation"><a href="mailto:chris.day@outlook.com">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="jumbotron">
+        <h1 class="cover-heading"><img src="profile.png" alt="Chris Day" width="150px" style="padding-right:20px">Hi, I'm Chris Day</h1>
+      </div>
+      <div class="row" id="experience">
+        <h3>Experience</h3>
+        <blockquote>
+          <div class="row">
+            <h4>Fabler.fm</h4>
+            <h5>Co-founder, October 2015 - present</h5>
+            <h6>Description</h6>
+            <ul>
+              <li>Built iOS app with Swift that achieved feature parity with built-in Podcast application. Contained social features similar to Twitter.</li>
+              <li>Built backend API layer with Django and Django REST Framework. Integrated local user account with Facebook login.</li>
+              <li>Built reactive web application using Angular 2.</li>
+            </ul>
+          </div>
+          <hr/>
+          <div class="row">
+            <h4>Microsoft</h4>
+            <h5>Development Engineer II, June 2012 - October 2015</h5>
+            <h6>Description</h6>
+            <ul>
+              <li>Wrote local advertising logic engine in C++ that was used to target over half a billion users in Get Windows 10 effort.</li>
+              <li>Implemented Auto Upgrade feature for moving Windows 8 users to Windows 8.1. Successfully moved over 30 million users.</li>
+              <li>Developed MFC application to create Windows 8.1 installation media to help drive adoption in emergent markets. Over 15,000 daily unique  users.</li>
+              <li>Architected a system to detect code regressions introduced by updates using aggregation analysis across disparate SQL databases. Average regression detection time went from 4 days to within 24 hours.</li>
+              <li>Serviced Storage and File System (multiple drivers written in both Windows Driver Model and Windows Driver Framework) stack for Windows 8+. Root-caused customer issues and provided solutions in time sensitive situations.</li>
+            </ul>
+            <h6>Awards</h6>
+            <ul>
+              <li>Microsoft Patent Award</li>
+            </ul>
+          </div>
+          <hr/>
+          <div class="row">
+            <h4>IBM</h4>
+            <h5>Extreme Blue Technical Intern, August 2011 - December 2011</h5>
+            <h6>Description</h6>
+            <ul>
+              <li>Worked on Extreme Blue team that built a low-level C framework and API to minimize downtime for Power servers.</li>
+            </ul>
+          </div>
+          <hr/>
+          <div class="row">
+            <h4>Microsoft</h4>
+            <h5>Development Engineer Intern, May 2011 - August 2011</h5>
+            <h6>Description</h6>
+            <ul>
+              <li>Designed an end-to-end testing suite for Microsoft Office file use over DFS.</li>
+            </ul>
+          </div>
+          <hr/>
+          <div class="row">
+            <h4>Intel</h4>
+            <h5>Pre-Silicon Validation Engineer, May 2010 - May 2011</h5>
+            <h6>Description</h6>
+            <ul>
+              <li>Wrote tests to verify Real Time Instruction Trace feature of Silvermont processor core.</li>
+              <li>Wrote Perl script to randomize processor configuration for pre-test environment setup.</li>
+            </ul>
+          </div>
+        </blockquote>
+      </div>
+      <div class="row" id="education">
+        <h3>Education</h3>
+        <blockquote>
+          <div class="row">
+            <h4>The University of Texas at Austin</h4>
+            <h5>Bachelor of Science in Electrical and Computer Engineering, GPA 3.6/4.0</h5>
+            <h6>Courses</h6>
+            <ul>
+              <li>Computer Architecture</li>
+              <li>Embedded and Real-Time Systems</li>
+              <li>Concurrent and Distributed Systems</li>
+              <li>Algorithms</li>
+              <li>Software Development Management</li>
+            </ul>
+            <h6>Projects</h6>
+            <ul>
+              <li>Built a Windows Phone 7 app that allowed users to chat peer-to-peer over LAN using UDP.</li>
+              <li>Built a Dropbox clone that worked over the peer-to-peer Chord distributed hash table.</li>
+              <li>Implemented RTOS on ARM Cortex M3 including priority based scheduling with blocking semaphores and system message queues. Enabled synchronization between multiple processors via CAN bus.</li>
+              <li>Designed custom PCB with mimicking Gameboy design. Implemented Tetris game algorithm, file system, storage driver, and game render for LCD. System was able to save and restart games across power events.</li>
+            </ul>
+            <h6>Awards</h6>
+            <ul>
+              <li>University Honors</li>
+            </ul>
+          </div>
+        </blockquote>
+      </div>
+      <div class="row" id="skills">
+        <h3>Skills</h3>
+        <blockquote>
+          <h4>Languages</h4>
+          <ul>
+            <li>Swift <span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+            <li>Objective-C</li>
+            <li>Python <span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>C/C++ <span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+            <li>C#</li>
+            <li>SQL</li>
+            <li>Ruby</li>
+            <li>Perl <span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+            <li>Java</li>
+          </ul>
+          <p><span class="glyphicon glyphicon-star" aria-hidden="true"></span> denotes preferred languages</p>
+          <h4>Frameworks</h4>
+          <ul>
+            <li>iOS SDK</li>
+            <li>Facebook SDK</li>
+            <li>Realm.io</li>
+            <li>Django</li>
+            <li>Angular 2</li>
+            <li>ASP.NET</li>
+            <li>Rails</li>
+          </ul>
+        </blockquote>
+      </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
