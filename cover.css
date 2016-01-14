@@ -2,6 +2,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -17,6 +18,14 @@ body {
   line-height: 40px;
 }
 
+h3 {
+  color: #16a085;
+}
+
+h4 {
+  color: #1abc9c;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -26,4 +35,8 @@ body {
 
 .container-narrow > hr {
   margin: 30px 0;
+}
+
+blockquote {
+  padding-left: 30px;
 }
