@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chef Steps</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="flat-ui.css" rel="stylesheet">
+    <link href="cover.css" rel="stylesheet">
+</head>
+<body id="page-top">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="pull-right">
+        <table class="table">
+          <tr><td>
+            <form class="form-inline" id="email_form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="emailAmount" placeholder="Number of emails">
+                </div>
+              </div>
+            </form>
+          </td></tr>
+          <tr><td>
+            <button class="btn btn-primary" onclick="generate_emails()">Generate Emails</button>
+          </tr></td>
+          <tr><td>
+            <button class="btn btn-primary" onclick="clear_emails()">Clear Emails</button>
+          </tr></td>
+          <tr><td>
+            <button class="btn btn-primary" onclick="duplicate()">Duplicate</button>
+          </tr></td>
+          <tr><td>
+            <button class="btn btn-primary" onclick="shuffle()">Shuffle</button>
+          </tr></td>
+          <tr><td>
+            <button class="btn btn-primary" onclick="remove_dups()">Remove Duplicates</button>
+          </tr></td>
+          <tr><td>
+            <h6 id="time"></h6>
+          </tr></td>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <h2>Email List</h2>
+      <h3 id="email_count">0 Emails</h3>
+      <table id="emails" class="table">
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+    var emails = []
+    var start = null
+    var end = null
+
+    function generate_emails() {
+      var amount = $('#emailAmount')[0].value
+      $('#email_form')[0].reset()
+
+      for(var i=0; i < amount; i++) {
+        emails[emails.length] = make_email()
+      }
+
+      display_emails()
+    }
+
+    // Knuth shuffle
+    // https://github.com/coolaj86/knuth-shuffle
+    function shuffle() {
+      var currentIndex = emails.length, temporaryValue, randomIndex;
+
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        temporaryValue = emails[currentIndex];
+        emails[currentIndex] = emails[randomIndex];
+        emails[randomIndex] = temporaryValue;
+      }
+
+      display_emails()
+    }
+
+    function duplicate() {
+      emails = emails.concat(emails)
+
+      display_emails()
+    }
+
+    function display_emails() {
+      $("#emails tr").remove();
+
+      $('#email_count')[0].innerText = `${emails.length} Emails`
+
+      var html = ""
+      for(var i=0; i < emails.length; i++)
+        html += `<tr><td>${emails[i]}</td></tr>`
+
+      $('#emails > tbody:last-child').append(html);
+    }
+
+    function clear_emails() {
+      emails = []
+
+      display_emails()
+    }
+
+    function make_email() {
+      var text = "";
+      var possible = "abcdefghijklmnopqrstuvwxyz";
+      var email_length = Math.floor(Math.random() * 9) + 1
+
+      for(var i=0; i < email_length; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text += "@gmail.com";
+    }
+
+    function remove_dups() {
+      start = new Date().getTime()
+      var hash = {}
+
+      emails = emails.filter(function(email){
+        var result = false
+
+        if (!(email in hash)) {
+          hash[email] = true
+          result = true
+        }
+
+        return result
+      })
+
+      end = new Date().getTime()
+
+      $('#time')[0].innerText = `${end - start}ms`
+
+      display_emails()
+    }
+  </script>
+</body>
+</html>
